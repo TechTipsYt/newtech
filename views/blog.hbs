@@ -1,0 +1,30 @@
+
+
+<center>
+    <h1>Blogs</h1>
+</center>
+
+<section >
+<div class="container mt-5">
+    <div class="row">
+        {{#each blogs}}
+        <div class="col-md-3">
+        <div class="card ps-3" style="width: 18rem;">
+            <img src="{{this.image}}" class="card-img-top" alt="Blog Image">
+            <div class="card-body">
+                <h5 class="card-title">{{this.title}}</h5>
+                <a href="{{this.link}}" class="btn btn-primary">Read More...</a>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+
+</div>
+
+
+
+</div>
+
+</section>
+

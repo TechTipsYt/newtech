@@ -1,0 +1,84 @@
+<center><h1><strong>Contact Us</strong></h1></center>
+
+    <style>
+        .contact-form-name,
+        .contact-form-email,
+        .contact-form-email-message {
+            max-width: 100%;
+        }
+
+        input[type=text],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+        }
+
+        input[type=submit] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        .containers {
+            border-radius: 5px;
+
+            padding: 20px;
+        }
+    </style>
+
+    <div style="padding: 30px;" class="form">
+        <form id="submit-form" action="">
+            <p>Name</p>
+            <input name="name" class="contact-form-name" placeholder="ENTER YOUR NAME"
+                id="ContactForm2_contact-form-name" type="text" size="30" value="" required>
+            <p>Email</p>
+            <input name="email" class="contact-form-email" placeholder="ENTER YOUR EMAIL"
+                id="ContactForm2_contact-form-email" type="text" size="30" value="" required>
+            <p>Message</p>
+            <textarea name="email-message" class="contact-form-email-message" placeholder="ENTER YOUR MESSAGE"
+                id="ContactForm2_contact-form-email-message" rows="3" cols="15" required></textarea>
+            <p></p>
+            <input class="contact-form-button contact-form-button-submit" id="ContactForm2_contact-form-submit"
+                type="submit" value="Send">
+            <div style="text-align: center; max-width: 222px; width: 100%">
+                <p class="contact-form-error-message" id="ContactForm2_contact-form-error-message"></p>
+                <p class="contact-form-success-message" id="ContactForm2_contact-form-success-message"></p>
+            </div>
+        </form>
+    </div>
+    <hr>
+
+
+    
+    <script>
+        $("#submit-form").submit((e) => {
+            e.preventDefault()
+            $.ajax({
+                url: "https://script.google.com/macros/s/AKfycbyqgsqG_bEcw9WtjW6WV0ZlEND03Mf7na8boyuD/exec",
+                data: $("#submit-form").serialize(),
+                method: "post",
+                success: function (response) {
+                    window.location.reload()
+                    window.location.href="/submit"
+                },
+                error: function (err) {
+                    alert("Oh SomeError Occured Try Again Later")
+
+                }
+            })
+        })
+    </script>
